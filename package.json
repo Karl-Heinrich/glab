@@ -3,12 +3,14 @@
   "version": "0.0.1",
   "description": "An interactive gitlab-cli with the goal to completely avoid the webinterface",
   "main": "dist/index.js",
-  "bin": "glab",
+  "bin": {
+    "glab": "dist/index.js"
+  },
   "scripts": {
     "start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
     "create": "npm run build && npm run test",
     "build": "npx tsc -p .",
-    "test": "sudo npm i -g && glab"
+    "test": "npm run build && sudo npm i . -g"
   },
   "repository": {
     "type": "git",
@@ -30,16 +32,19 @@
   "dependencies": {
     "@types/clear": "^0.1.0",
     "@types/figlet": "^1.2.0",
+    "axios": "^0.19.0",
     "chalk": "^2.4.2",
     "clear": "^0.1.0",
     "commander": "^3.0.1",
+    "dotenv": "^8.1.0",
     "figlet": "^1.2.4",
     "path": "^0.12.7"
   },
   "devDependencies": {
-    "ts-node": "^8.4.1",
+    "@types/dotenv": "^6.1.1",
     "@types/node": "^12.7.5",
     "nodemon": "^1.19.2",
+    "ts-node": "^8.4.1",
     "typescript": "^3.6.3"
   }
 }
