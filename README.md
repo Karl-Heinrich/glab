@@ -18,7 +18,7 @@
    `--`-'
 ```
 
-An interactive gitlab-cli with the goal to completely avoid the webinterface
+An interactive gitlab-cli to manage issues from the command line.
 
 ---
 

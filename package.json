@@ -1,7 +1,7 @@
 {
   "name": "glab",
   "version": "0.0.1",
-  "description": "An interactive gitlab-cli with the goal to completely avoid the webinterface",
+  "description": "An interactive gitlab-cli to manage issues from the command line",
   "main": "dist/index.js",
   "bin": {
     "glab": "dist/index.js"
