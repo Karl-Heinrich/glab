@@ -4,3 +4,6 @@ dist/
 
 # Config files
 .env
+
+# WIP - installation files
+install-glab.sh

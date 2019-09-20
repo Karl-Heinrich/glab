@@ -17,4 +17,3 @@ const displayContributersWanted = () => {
     printSorroundedWithDashes('Contributers wanted! See https://github.com/Karl-Heinrich/glab#contributing');
     emptyLine();
 }
-
