@@ -1,0 +1,54 @@
+{
+  "id": 971,
+  "iid": 293,
+  "project_id": 485,
+  "title": "[implement] User Story 7562923: Items in a list can be suspended",
+  "description": "Some description",
+  "state": "opened",
+  "created_at": "2019-10-21T12:11:53.178+02:00",
+  "updated_at": "2019-10-24T19:50:23.474+02:00",
+  "closed_at": null,
+  "closed_by": null,
+  "labels": ["Feature", "User Story"],
+  "milestone": null,
+  "assignees": [
+    {
+      "id": 126,
+      "name": "Tobias Gutmann",
+      "username": "GLAB_USERNAME",
+      "state": "active",
+      "avatar_url": "https://GLAB_HOST/uploads/-/system/user/avatar/126/avatar.png",
+      "web_url": "https://GLAB_HOST/GLAB_USERNAME"
+    }
+  ],
+  "author": {
+      "id": 126,
+      "name": "Tobias Gutmann",
+      "username": "GLAB_USERNAME",
+      "state": "active",
+      "avatar_url": "https://GLAB_HOST/uploads/-/system/user/avatar/126/avatar.png",
+      "web_url": "https://GLAB_HOST/GLAB_USERNAME"
+    },
+  "assignee": {
+    "id": 126,
+    "name": "Tobias Gutmann",
+    "username": "GLAB_USERNAME",
+    "state": "active",
+    "avatar_url": "https://GLAB_HOST/uploads/-/system/user/avatar/126/avatar.png",
+    "web_url": "https://GLAB_HOST/GLAB_USERNAME"
+  },
+  "user_notes_count": 2,
+  "merge_requests_count": 0,
+  "upvotes": 0,
+  "downvotes": 0,
+  "due_date": null,
+  "confidential": false,
+  "discussion_locked": null,
+  "web_url": "https://GLAB_HOST",
+  "time_stats": {
+    "time_estimate": 0,
+    "total_time_spent": 0,
+    "human_time_estimate": null,
+    "human_total_time_spent": null
+  }
+}
