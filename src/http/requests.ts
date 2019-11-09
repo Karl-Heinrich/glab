@@ -12,7 +12,8 @@ export const PROJECT_PATH = process.env.GLAB_PROJECT_PATH;
 export const USERNAME = process.env.GLAB_USERNAME;
 console.log(USERNAME);
 
-const URL_ENCODED_PATH = `${NAMESPACE}%2F${PROJECT_PATH}`;
+const URL_ENCODED_PROJECT_PATH = `/projects/${NAMESPACE}%2F${PROJECT_PATH}`;
+console.log(URL_ENCODED_PROJECT_PATH);
 const BASE_PATH = `https://${HOST}/api/v4`;
 
 const config: AxiosRequestConfig = {
@@ -39,7 +40,7 @@ export async function getOpenIssues(assignedToMe = false) {
   let issues;
 
   try {
-    const { data } = await axios.get(`${BASE_PATH}/issues?state=opened&with_labels_details=true&${scope}`, config);
+    const { data } = await axios.get(`${BASE_PATH}${URL_ENCODED_PROJECT_PATH}/issues?state=opened&with_labels_details=true&${scope}`, config);
     issues = data;
   } catch (error) {
     log(errorMessage('HTTP', error));
