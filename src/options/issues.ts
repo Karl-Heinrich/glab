@@ -18,7 +18,7 @@ export async function displayOpenIssues() {
   }
 
   emptyLine();
-  log(underline(`Open issues for ${PROJECT_PATH}:`));
+  log(underline(`Open issues for project ${PROJECT_PATH}:`));
   emptyLine();
   printIssuesAsList(issues);
 }
