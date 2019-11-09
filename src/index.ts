@@ -10,7 +10,7 @@ const glab = new commander.Command();
 glab.version('0.0.1').description('An interactive gitlab-cli to help with issues');
 
 glab
-  .option('-i, --issues', 'Show all issues with state "open"', displayOpenIssues)
+  .option('-i, --issues', 'Show all issues with state "open" you have access to', displayOpenIssues)
   .option('-a, --assigned-to-me', 'Show issues assigned to you including labels and their iid', displayOpenIssuesAssignedToMe)
   .option('-d, --description-iid <iid>', 'iid of the issue to show the description for')
   .parse(process.argv);

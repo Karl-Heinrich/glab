@@ -24,7 +24,8 @@ export async function displayOpenIssues() {
 }
 
 export async function displayOpenIssuesAssignedToMe() {
-  let issues = await getOpenIssues('scope=assigned-to-me&');
+  let assignedToMe = true;
+  let issues = await getOpenIssues(assignedToMe);
 
   if (issues.length === 0 || issues === undefined) {
     log(`There are no open issues for ${PROJECT_PATH} assigned to ${USERNAME}`);

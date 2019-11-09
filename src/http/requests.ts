@@ -10,6 +10,7 @@ const NAMESPACE = process.env.GLAB_NAMESPACE;
 
 export const PROJECT_PATH = process.env.GLAB_PROJECT_PATH;
 export const USERNAME = process.env.GLAB_USERNAME;
+console.log(USERNAME);
 
 const URL_ENCODED_PATH = `${NAMESPACE}%2F${PROJECT_PATH}`;
 const BASE_PATH = `https://${HOST}/api/v4`;
@@ -33,11 +34,12 @@ export async function getIssueDetails(iid: number) {
   return issueDetails;
 }
 
-export async function getOpenIssues(assignedToMe = '') {
+export async function getOpenIssues(assignedToMe = false) {
+  let scope = assignedToMe ? 'scope=assigned_to_me' : 'scope=all'
   let issues;
 
   try {
-    const { data } = await axios.get(`${BASE_PATH}/issues?state=opened&${assignedToMe}with_labels_details=true`, config);
+    const { data } = await axios.get(`${BASE_PATH}/issues?state=opened&with_labels_details=true&${scope}`, config);
     issues = data;
   } catch (error) {
     log(errorMessage('HTTP', error));
