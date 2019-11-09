@@ -1,16 +1,31 @@
 import chalk from 'chalk';
 import figlet from 'figlet';
 
-import {emptyLine, printSorroundedWithDashes} from '../../util/formatSnippets';
+import { emptyLine, printSorroundedWithDashes, log, errorMessage } from '../../util/formatSnippets';
+import markdownRenderer from '../renderer/markdown';
+import { readFile } from 'fs';
+
+const PATH_TO_ABOUT_MD = './ABOUT.md';
 
 export function displayAboutInformation() {
-  console.log(chalk.red(figlet.textSync('glab', '3D Diagonal')));
+  log(chalk.red(figlet.textSync('glab', '3D Diagonal')));
   displayContributersWanted();
-	emptyLine();
+  emptyLine();
 
-	console.log("Glab helps you manage your gitlab issues.")
-	emptyLine();
-};
+  emptyLine();
+  markdownRenderer('**test**');
+
+  readFile(PATH_TO_ABOUT_MD, 'utf8', (err, md) => {
+    if (err) {
+      log(errorMessage('Unable to read about file :('));
+      return;
+    }
+
+    log(markdownRenderer(md));
+  });
+
+
+}
 
 const displayContributersWanted = () => {
   emptyLine();

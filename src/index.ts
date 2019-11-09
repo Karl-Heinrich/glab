@@ -13,17 +13,12 @@ glab
   .option('-i, --issues', 'Show all issues with state "open" you have access to', displayOpenIssues)
   .option('-a, --assigned-to-me', 'Show issues assigned to you including labels and their iid', displayOpenIssuesAssignedToMe)
   .option('-d, --description-iid <iid>', 'iid of the issue to show the description for')
+  .option('-b, --about', 'about this cli', displayAboutInformation)
   .parse(process.argv);
 
 if (glab.descriptionIid !== undefined) {
   displayIssueDescription(glab.descriptionIid);
 }
-
-glab
-  .command('about')
-  .alias('a')
-  .description('About this cli')
-  .action(displayAboutInformation);
 
 if (!process.argv.slice(2).length) {
   glab.outputHelp();
