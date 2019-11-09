@@ -1,14 +1,9 @@
 import chalk from 'chalk';
-import marked from 'marked';
-import TerminalRenderer from 'marked-terminal';
 
-import { emptyLine, log, getLengthOfLongestIssueTitle, underline } from '../../util/formatSnippets';
-import { getOpenIssues, getIssueDetails, PROJECT_PATH, USERNAME } from '../http/requests';
 import { Issues } from '../../models/issues';
-
-marked.setOptions({
-  renderer: new TerminalRenderer({ reflowText: true, width: 80, code: chalk.yellowBright })
-});
+import { emptyLine, getLengthOfLongestIssueTitle, log, underline } from '../../util/formatSnippets';
+import { getIssueDetails, getOpenIssues, PROJECT_PATH, USERNAME } from '../http/requests';
+import markdownRenderer from '../renderer/markdown';
 
 export async function displayOpenIssues() {
   let issues = await getOpenIssues();
@@ -43,7 +38,7 @@ export async function displayIssueDescription(iid: number) {
   emptyLine();
   log(underline(issueDetail.title));
   emptyLine();
-  log(marked(issueDetail.description));
+  log(markdownRenderer(issueDetail.description));
 }
 
 function printIssuesAsList(issues: Issues[]) {
