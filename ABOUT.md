@@ -24,7 +24,8 @@ GLAB_PROJECT_PATH=pr0j3ctN4m3
 GLAB_USERNAME=userN4m3
 ```
 
-Alternatively, you could set environmental variables.
+Alternatively, you could set environmental variables, to use
+glab globally.
 E.g. in your `.bashrc` or `.zshrc`:
 
 ```sh
