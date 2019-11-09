@@ -7,7 +7,7 @@ import { getOpenIssues, getIssueDetails, PROJECT_PATH, USERNAME } from '../http/
 import { Issues } from '../../models/issues';
 
 marked.setOptions({
-    renderer: new TerminalRenderer({code: chalk.yellowBright})
+    renderer: new TerminalRenderer({reflowText: true, width: 80, code: chalk.yellowBright})
 })
 
 export async function displayOpenIssues() {
