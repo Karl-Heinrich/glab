@@ -4,13 +4,12 @@ import dotenv from 'dotenv';
 import { log, errorMessage } from '../../util/formatSnippets';
 
 dotenv.config();
-const HOST = process.env.GLAB_HOST;
-const PRIVATE_TOKEN = process.env.GLAB_PRIVATE_TOKEN;
-const NAMESPACE = process.env.GLAB_NAMESPACE;
-
 export const PROJECT_PATH = process.env.GLAB_PROJECT_PATH;
 export const USERNAME = process.env.GLAB_USERNAME;
 
+const HOST = process.env.GLAB_HOST;
+const PRIVATE_TOKEN = process.env.GLAB_PRIVATE_TOKEN;
+const NAMESPACE = process.env.GLAB_NAMESPACE;
 const URL_ENCODED_PROJECT_PATH = `/projects/${NAMESPACE}%2F${PROJECT_PATH}`;
 const BASE_PATH = `https://${HOST}/api/v4`;
 
