@@ -10,10 +10,8 @@ const NAMESPACE = process.env.GLAB_NAMESPACE;
 
 export const PROJECT_PATH = process.env.GLAB_PROJECT_PATH;
 export const USERNAME = process.env.GLAB_USERNAME;
-console.log(USERNAME);
 
 const URL_ENCODED_PROJECT_PATH = `/projects/${NAMESPACE}%2F${PROJECT_PATH}`;
-console.log(URL_ENCODED_PROJECT_PATH);
 const BASE_PATH = `https://${HOST}/api/v4`;
 
 const config: AxiosRequestConfig = {
