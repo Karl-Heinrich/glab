@@ -23,8 +23,6 @@ export function displayAboutInformation() {
 
     log(markdownRenderer(md));
   });
-
-
 }
 
 const displayContributersWanted = () => {
