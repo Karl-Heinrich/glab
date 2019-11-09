@@ -36,7 +36,7 @@ export async function displayIssueDescription(iid: number) {
   let issueDetail = await getIssueDetails(iid);
 
   emptyLine();
-  log(underline(issueDetail.title));
+  log('#', chalk.yellowBright(issueDetail.iid), underline(issueDetail.title));
   emptyLine();
   log(markdownRenderer(issueDetail.description));
 }
@@ -50,7 +50,7 @@ function printIssuesAsList(issues: Issues[]) {
 
   for (const issue of issues) {
     let intentionalSpacesForAlignment = ' '.repeat(lengthOfLongestIssueTitle - issue.title.length);
-    log(chalk.yellowBright(String(issue.iid)) + ' ' + issue.title + intentionalSpacesForAlignment + printIssueLabels(issue.labels));
+    log('#', chalk.yellowBright(String(issue.iid)) + ' ' + issue.title + intentionalSpacesForAlignment + printIssueLabels(issue.labels));
   }
 }
 
