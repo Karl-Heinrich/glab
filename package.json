@@ -35,7 +35,7 @@
     "commander": "^3.0.1",
     "dotenv": "^8.1.0",
     "figlet": "^1.2.4",
-    "marked": "^0.7.0",
+    "marked": "^4.0.10",
     "marked-terminal": "^3.3.0",
     "path": "^0.12.7"
   },
